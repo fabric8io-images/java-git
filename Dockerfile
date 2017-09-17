@@ -7,3 +7,8 @@ RUN yum -y -q install git which &&\
     yum clean all
 
 USER jboss
+
+ENV JAVA_APP_DIR=/deployments
+
+CMD [ "/deployments/run-java.sh" ]
+
