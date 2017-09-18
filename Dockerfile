@@ -4,11 +4,9 @@ MAINTAINER Fabric8 Team <fabric8@googlegroups.com>
 USER root
 
 RUN yum -y -q install git which &&\
-    yum clean all
-
+    yum clean all &&\
+    git config --system user.name jboss &&\
+    git config --system user.email jboss@localhost
+    
 USER jboss
-
-ENV JAVA_APP_DIR=/deployments
-
-CMD [ "/deployments/run-java.sh" ]
 
